@@ -1,5 +1,6 @@
 HELP.md
-/target/
+front/target/
+back/target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -18,12 +19,19 @@ HELP.md
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-/build/
+front/nbproject/private/
+front/nbbuild/
+front/dist/
+front/nbdist/
+front/.nb-gradle/
+front/build/
+
+back/nbproject/private/
+back/nbbuild/
+back/dist/
+back/nbdist/
+back/.nb-gradle/
+back/build/
 
 ### VS Code ###
 .vscode/
