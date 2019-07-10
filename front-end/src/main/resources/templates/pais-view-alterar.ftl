@@ -22,31 +22,28 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>Plano de Aulas</h1>
+            <h1>Gerenciamento de País</h1>
+            <p>Essa página é responsável por fazer o geranciamento de paises. </p>
         </div>
         <div class="row">
             <div class="col">
-                <form action="/aula-plano-servico/criar" method="post">
+                <form action="/pais/alterar" method="post">
                     <div class="form-group">
-                        <label for="dataDaAulaSubstituida">Data da Aula a ser Substituida:</label>
-                        <input value="${(planoAulaAtual.dataDaAulaSubstituida)!}" name="dataDaAulaSubstituida" type="text" class="form-control" id="dataDaAulaSubstituida">
+                        <label for="nome">Nome:</label>
+                        <input value="${(paisAtual.nome)!}" name="nome" type="text" class="form-control" id="nome">
                     </div>
                     <div class="form-group">
-                        <label for="quantidadeDeAulas">Quantidade de aulas:</label>
-                        <input value="${(planoAulaAtual.quantidadeDeAulas)!}"  name="quantidadeDeAulas" type="text" class="form-control" id="quantidadeDeAulas">
+                        <label for="sigla">Sigla:</label>
+                        <input value="${(paisAtual.sigla)!}"  name="sigla" type="text" class="form-control" id="sigla">
                     </div>
                     <div class="form-group">
-                        <label for="professorSubstituto">Professor Subistituto:</label>
-                        <input value="${(planoAulaAtual.professorSubstituto)!}"  name="professorSubstituto" type="text" class="form-control" id="professorSubstituto">
-                    </div>
-                    <div class="form-group">
-                        <label for="turma">Turma:</label>
-                        <input value="${(planoAulaAtual.turma)!}"  name="turma" type="text" class="form-control" id="turma">
+                        <label for="codigo">Código Telefone:</label>
+                        <input value="${(paisAtual.codigoTelefone)!}"  name="codigoTelefone" type="number" class="form-control" id="codigo">
                     </div>
 
-                    <input type="hidden" name="id" value="${(idAulaPlanoSubstituicao.id)!}"></input>
+                    <input type="hidden" name="id" value="${(paisAtual.id)!}"></input>
 
-                    <button type="submit" class="btn btn-warning">Criar</button>
+                    <button type="submit" class="btn btn-warning">Alterar</button>
                 </form>
 
             </div>
@@ -56,19 +53,18 @@
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Data</th>
-                            <th>Quantidade</th>
-                            <th>Professor</th>
-                            <th>Turma</th>
+                            <th>Nome</th>
+                            <th>Sigla</th>
+                            <th>Código Telefone</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <#list planeDeAulas as planeDeAula>
+                        <#list paises as pais>
                             <tr>
-                                <td>${planeDeAula.dataDaAulaSubstituida}</td>
-                                <td>${planeDeAula.quantidadeDeAulas}</td>
-                                <td>${planeDeAula.professorSubstituto}</td>
-                                <td>${planeDeAula.turma}</td>
+                                <td>${pais.nome}</td>
+                                <td>${pais.sigla}</td>
+                                <td>${pais.codigoTelefone}</td>
                                 <td>
                                     <a href="/pais/prepara-alterar?id=${pais.id}">Alterar</a>
                                     <a href="/pais/excluir?id=${pais.id}">Excluir</a>
